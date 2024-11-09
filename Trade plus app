@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Plus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="hero">
+        <h2>Welcome to Trade Plus</h2>
+        <p>Start trading with the best platform!</p>
+        <button onclick="startTrading()">Get Started</button>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3>Real-time Stock Tracking</h3>
+            <p>Track stock prices live and make informed decisions.</p>
+        </div>
+        <div class="feature">
+            <h3>Trading Tools</h3>
+            <p>Use powerful tools to trade effectively and efficiently.</p>
+        </div>
+        <div class="feature">
+            <h3>Secure Account</h3>
+            <p>Your account and data are fully secured with encryption.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Trade Plus. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // API key
+        const apiKey = 'WUOXTE9RXQDUGVIQ';
+
+        // Example API request to fetch stock data using the API key
+        async function fetchStockData() {
+            try {
+                const response = await fetch(`https://api.example.com/stock_data?apikey=${apiKey}`);
+                const data = await response.json();
+                console.log(data);
+                // Process data as needed
+            } catch (error) {
+                console.error('Error fetching stock data:', error);
+            }
+        }
+
+        // Call the API when the user starts trading
+        function startTrading() {
+            fetchStockData();
+            alert('Starting Trading...'); // You can replace this with actual trading logic
+        }
+    </script>
+</body>
+</html>
